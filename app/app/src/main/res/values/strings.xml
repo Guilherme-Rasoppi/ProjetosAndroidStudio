@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">app</string>
+    <string name="luan_13a">LUAN - 13A</string>
+    <string name="voltar">VOLTAR</string>
+    <string name="todo">IMAGEM</string>
+    <string name="adicionar_tarefa">ADICIONAR TAREFA</string>
+    <string name="selecionar_data_e_hor_rio">SELECIONAR DATA E HORÁRIO</string>
+    <string name="_08_30">08:30</string>
+    <string name="levar_lixo">LEVAR LIXO</string>
+    <string name="salvar">SALVAR</string>
+    <string name="logotiplogotipo">logotiplogotipo</string>
+    <string name="deletar">DELETAR</string>
+    <string name="avatar">avatar</string>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="welcome_to_the_apps">Welcome to the apps</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="doesn_t_have_an_accout_yet">Doesn\'t have an accout yet?</string>
+    <string name="sign_up"><u>Sign Up</u></string>
+
+</resources>
