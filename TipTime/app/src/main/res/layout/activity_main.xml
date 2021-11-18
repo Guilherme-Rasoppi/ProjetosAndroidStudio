@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/custo_servico"
+        android:hint="Custo do Serviço"
+        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Como foi o atendimento?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custo_servico"/>
+
+    <RadioGroup
+        android:id="@+id/opcao_dica"
+        android:checkedButton="@id/opcao_vinte_por_cento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/service_question"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/opcao_vinte_por_cento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excelente (20%)" />
+
+        <RadioButton
+            android:id="@+id/opcao_dezoito_por_cento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bom (18%)" />
+
+        <RadioButton
+            android:id="@+id/opcao_quinze_por_cento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK (15%)" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/interruptor_arredondamento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:minHeight="48dp"
+        android:text="Arredondar gorjeta?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/opcao_dica" />
+
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        app:layout_constraintTop_toBottomOf="@id/interruptor_arredondamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/valor_gorjeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculate_button"
+        tools:text="Valor gorjeta: R$10" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
