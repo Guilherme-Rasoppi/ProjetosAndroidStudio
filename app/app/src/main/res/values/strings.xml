@@ -11,4 +11,5 @@
     <string name="logotiplogotipo">logotiplogotipo</string>
     <string name="deletar">DELETAR</string>
     <string name="avatar">avatar</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
