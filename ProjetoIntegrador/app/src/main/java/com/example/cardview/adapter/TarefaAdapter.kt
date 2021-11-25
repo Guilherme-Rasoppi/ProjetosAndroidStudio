@@ -39,10 +39,5 @@ class TarefaAdapter (context: Context,
         return listTarefas.size
     }
 
-    fun validarFormulario(){
-        if(){
-
-        }
-    }
 
 }
