@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListFragment : Fragment() {
 
@@ -18,8 +20,6 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
 
         val view:View = inflater.inflate(R.layout.fragment_list,container,false)
         val rvList:RecyclerView by lazy {
@@ -34,15 +34,14 @@ class ListFragment : Fragment() {
                     Tarefa("Rafael", "28/11/2021", "09:10", "Verde")
                 )
             )
-        val buttonNavSeg = view.findViewById<Button>(R.id.floatingActionButton)
-        buttonNavSeg.setOnClickListener{
+
+        val buttonNavSeg = view.findViewById<FloatingActionButton>(R.id.buttonadicionar)
+
+       buttonNavSeg.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_listFragment_to_tarefaFragment)
         }
             return view
-
-        }
-
-
-    }
+       }
+}
 
 
