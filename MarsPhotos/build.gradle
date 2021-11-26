@@ -1,0 +1,30 @@
+
+buildscript {
+    ext {
+        // Versions for all the dependencies we plan to use. It's particularly useful for kotlin
+        // where the versions of the plugin needs to be the same as the version of the
+        // library defined in the app Gradle file
+        kotlin_version = "1.4.30"
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

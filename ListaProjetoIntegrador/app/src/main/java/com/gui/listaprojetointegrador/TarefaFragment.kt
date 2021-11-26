@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
@@ -27,13 +28,18 @@ class TarefaFragment : Fragment() {
         val buttonNavSeg = view.findViewById<Button>(R.id.buttonSalvar)
         val validaData = view.findViewById<TextView>(R.id.textData)
         val validaHora = view.findViewById<TextView>(R.id.textHora)
-        buttonNavSeg.setOnClickListener{
-            fun validarTarefa(){
-
+        fun validarTarefa(){
+            if(validaData != null){
+                validaData.text.isEmpty()
+                validaHora.text.isEmpty()
             }
+        }
+        buttonNavSeg.setOnClickListener{
+
             Navigation.findNavController(view).navigate(R.id.action_tarefaFragment_to_listFragment)
         }
         return view
+
     }
 
 }
