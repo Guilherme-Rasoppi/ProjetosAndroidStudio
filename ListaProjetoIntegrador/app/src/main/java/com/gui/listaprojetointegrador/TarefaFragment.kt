@@ -12,9 +12,6 @@ import androidx.navigation.fragment.findNavController
 
 class TarefaFragment : Fragment() {
 
-    /*private lateinit var edit_text_time: EditText
-    private lateinit var edit_text_data: EditText*/
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -6,13 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.gui.listaprojetointegrador.adapter.ItemTarefaClick
+import com.gui.listaprojetointegrador.adapter.tarefaAdapter
+import com.gui.listaprojetointegrador.model.TarefaViewModel
 
-class ListFragment : Fragment() {
+class ListFragment : Fragment(), ItemTarefaClick{
+
+    val mainViewModel: TarefaViewModel by activityViewModels()
 
     val adapter = tarefaAdapter()
 
@@ -27,21 +34,31 @@ class ListFragment : Fragment() {
         }
         rvList.adapter = adapter
 
-        rvList.layoutManager=LinearLayoutManager(context)
-            adapter.updateList(
-                arrayListOf(
-                    Tarefa("Luan", "28/11/2021", "09:00", "Verde"),
-                    Tarefa("Rafael", "28/11/2021", "09:10", "Verde")
-                )
-            )
+        mainViewModel.listaTarefas()
+        mainViewModel.pegarResposta.observe(viewLifecycleOwner, {
+                response ->
+            response.body()?.let { adapter.setData(it) }
+        })
 
+
+        val buttonAcessar = view.findViewById<Button>(R.id.buttonAcessar)
         val buttonNavSeg = view.findViewById<FloatingActionButton>(R.id.buttonadicionar)
 
        buttonNavSeg.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_listFragment_to_tarefaFragment)
         }
+
+
             return view
-       }
+
+        }
+
+
+    override fun clicarTarefa(tarefa: Tarefa) {
+        mainViewModel.tarefaSelecionada = tarefa
+        findNavController().navigate(R.id.action_listFragment_to_tarefaFragment)
+
+    }
 }
 
 

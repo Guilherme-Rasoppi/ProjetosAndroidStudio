@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="313dp"
-        android:layout_height="185dp"
+        android:layout_width="309dp"
+        android:layout_height="253dp"
         android:layout_marginTop="40dp"
         android:src="@drawable/helping_the_next__3_"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         style="@style/ContainerComponents"
         android:layout_width="373dp"
         android:layout_height="284dp"
-        android:layout_marginTop="88dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
 
     <Button
         style="@style/Button"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="ENTRAR"
         android:textSize="24sp"
         android:textStyle="bold"

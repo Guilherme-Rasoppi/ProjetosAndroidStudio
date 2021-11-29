@@ -1,16 +1,17 @@
-package com.gui.listaprojetointegrador
+package com.gui.listaprojetointegrador.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.gui.listaprojetointegrador.R
+import com.gui.listaprojetointegrador.Tarefa
 
 class tarefaAdapter()
 
     : RecyclerView.Adapter<tarefaAdapter.TarefaViewHolder>() {
-    val listTarefas: MutableList<Tarefa> = mutableListOf()
+    var listTarefas: MutableList<Tarefa> = mutableListOf()
     class TarefaViewHolder(view: View): RecyclerView.ViewHolder(view){
         val textNome = view.findViewById<TextView>(R.id.textNome)
         val textData = view.findViewById<TextView>(R.id.textData)
@@ -36,16 +37,19 @@ class tarefaAdapter()
         holder.binding(listTarefas[position])
 
     }
-    fun updateList(list: List<Tarefa>){
+    /*fun updateList(list: List<Tarefa>){
         this.listTarefas.clear()
         this.listTarefas.addAll(list)
+        notifyDataSetChanged()
+    }*/
+    fun setData(tarefas: List<Tarefa>){
+        this.listTarefas = tarefas as MutableList<Tarefa>
         notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
         return listTarefas.size
     }
-
 
 
 
