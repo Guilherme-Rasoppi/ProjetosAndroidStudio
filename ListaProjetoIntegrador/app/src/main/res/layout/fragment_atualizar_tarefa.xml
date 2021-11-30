@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="56dp"
-        android:text="ADICIONAR TAREFA"
+        android:text="ATUALIZA TAREFA"
         android:textColor="#E60404"
         android:textSize="20sp"
         android:textStyle="bold"

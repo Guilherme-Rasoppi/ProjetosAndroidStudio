@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import java.util.*
 
 class TarefaFragment : Fragment() {
 
@@ -20,9 +20,9 @@ class TarefaFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_tarefa, container, false)
 
 
-        val edit_text_time = view.findViewById<EditText>(R.id.editTextTime)
-        val edit_text_data = view.findViewById<EditText>(R.id.editTextDate)
-        val buttonNavSeg = view.findViewById<Button>(R.id.buttonSalvar)
+        val edit_text_time = view.findViewById<EditText>(R.id.editTextHoraAtualizada)
+        val edit_text_data = view.findViewById<EditText>(R.id.editTextDataAtualizada)
+        val buttonNavSeg = view.findViewById<Button>(R.id.buttonSalvarAtualizacao)
 
         fun validarTarefa(): Boolean {
 
@@ -45,6 +45,12 @@ class TarefaFragment : Fragment() {
         }
         return view
     }
+
+
+
 }
+
+
+
 
 

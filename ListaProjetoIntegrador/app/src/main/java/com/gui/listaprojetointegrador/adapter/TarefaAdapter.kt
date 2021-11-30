@@ -7,8 +7,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gui.listaprojetointegrador.R
 import com.gui.listaprojetointegrador.Tarefa
+import com.gui.listaprojetointegrador.model.TarefaViewModel
 
-class tarefaAdapter()
+class tarefaAdapter(private val taskItemClickListener: ItemTarefaClick,
+                    private val mainViewModel: TarefaViewModel)
 
     : RecyclerView.Adapter<tarefaAdapter.TarefaViewHolder>() {
     var listTarefas: MutableList<Tarefa> = mutableListOf()

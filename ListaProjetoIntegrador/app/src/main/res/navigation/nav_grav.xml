@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_listFragment_to_tarefaFragment"
             app:destination="@id/tarefaFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_atualizarTarefa2"
+            app:destination="@id/atualizarTarefa2" />
     </fragment>
     <fragment
         android:id="@+id/tarefaFragment"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_tarefa" >
         <action
             android:id="@+id/action_tarefaFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/atualizarTarefa2"
+        android:name="com.gui.listaprojetointegrador.AtualizarTarefa"
+        android:label="fragment_atualizar_tarefa"
+        tools:layout="@layout/fragment_atualizar_tarefa" >
+        <action
+            android:id="@+id/action_atualizarTarefa2_to_listFragment"
             app:destination="@id/listFragment" />
     </fragment>
 </navigation>

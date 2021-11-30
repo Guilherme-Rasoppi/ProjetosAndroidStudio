@@ -15,50 +15,40 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.gui.listaprojetointegrador.adapter.ItemTarefaClick
 import com.gui.listaprojetointegrador.adapter.tarefaAdapter
+import com.gui.listaprojetointegrador.databinding.FragmentListBinding
 import com.gui.listaprojetointegrador.model.TarefaViewModel
 
-class ListFragment : Fragment(), ItemTarefaClick{
+class ListFragment : Fragment(), ItemTarefaClick {
 
     val mainViewModel: TarefaViewModel by activityViewModels()
 
-    val adapter = tarefaAdapter()
+    private var _binding: FragmentListBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val view:View = inflater.inflate(R.layout.fragment_list,container,false)
-        val rvList:RecyclerView by lazy {
-            view.findViewById(R.id.rv_list)
-        }
-        rvList.adapter = adapter
+        _binding = FragmentListBinding.inflate(inflater, container, false)
 
-        mainViewModel.listaTarefas()
-        mainViewModel.pegarResposta.observe(viewLifecycleOwner, {
-                response ->
-            response.body()?.let { adapter.setData(it) }
-        })
+        val adapter = tarefaAdapter(this, mainViewModel)
+        binding.rvList.layoutManager = LinearLayoutManager(context)
+        binding.rvList.adapter = adapter
+        binding.rvList.setHasFixedSize(true)
 
 
-        val buttonAcessar = view.findViewById<Button>(R.id.buttonAcessar)
-        val buttonNavSeg = view.findViewById<FloatingActionButton>(R.id.buttonadicionar)
-
-       buttonNavSeg.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_listFragment_to_tarefaFragment)
+        binding.buttonadicionar.setOnClickListener {
+            findNavController().navigate(R.id.action_listFragment_to_tarefaFragment)
         }
 
-
-            return view
-
-        }
-
+        return binding.root
+    }
 
     override fun clicarTarefa(tarefa: Tarefa) {
-        mainViewModel.tarefaSelecionada = tarefa
-        findNavController().navigate(R.id.action_listFragment_to_tarefaFragment)
-
+        findNavController().navigate(R.id.action_listFragment_to_atualizarTarefa2)
     }
+
 }
 
 
