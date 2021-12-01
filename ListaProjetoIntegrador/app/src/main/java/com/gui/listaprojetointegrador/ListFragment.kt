@@ -28,7 +28,7 @@ class ListFragment : Fragment(), ItemTarefaClick {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentListBinding.inflate(inflater, container, false)
 
@@ -37,6 +37,11 @@ class ListFragment : Fragment(), ItemTarefaClick {
         binding.rvList.adapter = adapter
         binding.rvList.setHasFixedSize(true)
 
+        mainViewModel.listaTarefas()
+        mainViewModel.pegarResposta.observe(viewLifecycleOwner, {
+                response ->
+            response.body()?.let { adapter.setData(it) }
+        })
 
         binding.buttonadicionar.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_tarefaFragment)
@@ -46,7 +51,9 @@ class ListFragment : Fragment(), ItemTarefaClick {
     }
 
     override fun clicarTarefa(tarefa: Tarefa) {
-        findNavController().navigate(R.id.action_listFragment_to_atualizarTarefa2)
+        mainViewModel.atualizar(tarefa)
+        findNavController().navigate(R.id.action_listFragment_to_tarefaFragment)
+
     }
 
 }

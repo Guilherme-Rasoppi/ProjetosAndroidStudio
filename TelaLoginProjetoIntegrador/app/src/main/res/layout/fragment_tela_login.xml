@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="TelaLogin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editTextCondominio"
+            style="@android:style/Widget.AutoCompleteTextView"
+            android:layout_width="313dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="52dp"
+            android:ems="10"
+            android:hint="Usuário"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/SenhaUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextviewAcessoUser"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/editTextSenhaUser"
+            android:layout_width="329dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="60dp"
+            android:ems="10"
+            android:hint="Senha do usuário"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SenhaUser" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="331dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/helping_the_next__3_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TextviewAcessoUser"
+            android:layout_width="347dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="26dp"
+            android:text="Usuário"
+            android:textColor="#2196F3"
+            android:textSize="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/SenhaUser"
+            android:layout_width="347dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginEnd="26dp"
+            android:text=" Senha"
+            android:textColor="#2196F3"
+            android:textSize="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextviewAcessoUser" />
+
+        <Button
+            android:id="@+id/buttonEntrar"
+            android:layout_width="206dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="159dp"
+            android:layout_marginBottom="140dp"
+            android:text="Entrar"
+            android:textSize="20sp"
+            app:backgroundTint="#2196F3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSenhaUser"
+            app:layout_constraintVertical_bias="0.303" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

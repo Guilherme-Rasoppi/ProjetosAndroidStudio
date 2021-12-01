@@ -25,12 +25,6 @@ class TarefaViewModel @Inject constructor(
     private val _deletarResposta = MutableLiveData<Response<Tarefa>>()
     val deletarResposta: LiveData<Response<Tarefa>> = _deletarResposta
 
-    private val _atualizarResposta = MutableLiveData<Response<Tarefa>>()
-    val atualizarResposta: LiveData<Response<Tarefa>> = _atualizarResposta
-
-
-
-
 
     val selectedDateLiveData: MutableLiveData<String> = MutableLiveData()
 

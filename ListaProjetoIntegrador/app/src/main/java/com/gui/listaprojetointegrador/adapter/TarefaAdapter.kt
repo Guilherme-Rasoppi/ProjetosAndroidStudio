@@ -3,6 +3,7 @@ package com.gui.listaprojetointegrador.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gui.listaprojetointegrador.R
@@ -19,12 +20,14 @@ class tarefaAdapter(private val taskItemClickListener: ItemTarefaClick,
         val textData = view.findViewById<TextView>(R.id.textData)
         val textHora = view.findViewById<TextView>(R.id.textHora)
         val textStatus = view.findViewById<TextView>(R.id.textStatus)
+        val buttonAcessar = view.findViewById<Button>(R.id.buttonAcessar)
 
         fun binding(tarefa: Tarefa){
             textNome.text = tarefa.nome
             textData.text = tarefa.data
             textHora.text = tarefa.hora
             textStatus.text = tarefa.status
+
         }
     }
 
@@ -37,6 +40,10 @@ class tarefaAdapter(private val taskItemClickListener: ItemTarefaClick,
 
     override fun onBindViewHolder(holder: TarefaViewHolder, position: Int) {
         holder.binding(listTarefas[position])
+        val tarefa = listTarefas[position]
+        holder.buttonAcessar.setOnClickListener{
+            taskItemClickListener.clicarTarefa(tarefa)
+        }
 
     }
     /*fun updateList(list: List<Tarefa>){
