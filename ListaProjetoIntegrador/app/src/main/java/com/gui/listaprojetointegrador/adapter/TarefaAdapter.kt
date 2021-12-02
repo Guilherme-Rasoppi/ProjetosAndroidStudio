@@ -46,11 +46,11 @@ class tarefaAdapter(private val taskItemClickListener: ItemTarefaClick,
         }
 
     }
-    /*fun updateList(list: List<Tarefa>){
+    fun updateList(list: List<Tarefa>){
         this.listTarefas.clear()
         this.listTarefas.addAll(list)
         notifyDataSetChanged()
-    }*/
+    }
     fun setData(tarefas: List<Tarefa>){
         this.listTarefas = tarefas as MutableList<Tarefa>
         notifyDataSetChanged()

@@ -44,8 +44,11 @@ class ListFragment : Fragment(), ItemTarefaClick {
         })
 
         binding.buttonadicionar.setOnClickListener {
+            mainViewModel.tarefaSelecionada != null
             findNavController().navigate(R.id.action_listFragment_to_tarefaFragment)
         }
+
+
 
         return binding.root
     }

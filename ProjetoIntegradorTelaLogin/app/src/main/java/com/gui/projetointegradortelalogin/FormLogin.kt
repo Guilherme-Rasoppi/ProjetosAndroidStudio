@@ -21,8 +21,7 @@ class FormLogin : AppCompatActivity() {
 
         telaCadastro.setOnClickListener(View.OnClickListener {
 
-            intent = Intent(this,TelaCadastro.javaClass)
-            startActivity(intent)
+
 
         })
 
